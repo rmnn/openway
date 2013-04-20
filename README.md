@@ -1,4 +1,0 @@
-openway
-=======
-
-OpenWay
