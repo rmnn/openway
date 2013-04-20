@@ -16,7 +16,8 @@ public class Main {
 	/**
 	 * Get data from file and handle it
 	 * 
-	 * @throws IOExpception, if data is incorrect
+	 * @throws IOExpception
+	 *           , if data is incorrect
 	 */
 	private static void getAndHandleData() throws IOException {
 		Scanner in = new Scanner(System.in);
@@ -39,7 +40,8 @@ public class Main {
 	 * Find short cut between two points
 	 * 
 	 * @return short cut between two points;
-	 * @throws RuntimeExpception, if there is no path between points
+	 * @throws RuntimeExpception
+	 *           , if there is no path between points
 	 */
 	private static int getShortCut() throws IOException {
 		int minimalSide = Math.min(myHeight, myWidth);
