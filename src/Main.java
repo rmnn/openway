@@ -1,24 +1,23 @@
-
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 
 /**
-* Program finds short cut in labyrinth between two points
-*
-* @author ageevd
-*/
+ * Program finds short cut in labyrinth between two points
+ * 
+ * @author ageevd
+ */
 public class Main {
 	private static int[][] myField = new int[64][64];
 	private static int myHeight;
 	private static int myWidth;
 	private static final int[] myPossibleWays = { 1, -1, 0, 0, 0, 0, 1, -1 };
-		
+
 	/**
-	* Get data from file and handle it
-	* 
-	* @throws IOExpception, if data is incorrect
-	*/
+	 * Get data from file and handle it
+	 * 
+	 * @throws IOExpception, if data is incorrect
+	 */
 	private static void getAndHandleData() throws IOException {
 		Scanner in = new Scanner(System.in);
 		System.out.print("Write name of file: ");
@@ -37,11 +36,11 @@ public class Main {
 	}
 
 	/**
-	* Find short cut between two points
-	* 
-	* @return short cut between two points;
-	* @throws RunTimeExpception, if there is no path between points
-	*/
+	 * Find short cut between two points
+	 * 
+	 * @return short cut between two points;
+	 * @throws RuntimeExpception, if there is no path between points
+	 */
 	private static int getShortCut() throws IOException {
 		int minimalSide = Math.min(myHeight, myWidth);
 		int maxIterations = minimalSide * minimalSide / 2 + minimalSide - 1;
@@ -52,13 +51,11 @@ public class Main {
 				for (int j = 1; j <= myWidth; j++) {
 					for (int k = 0; k < 4; k++) {
 						if (myField[i][j] == pathLength) {
-							switch (myField[i + myPossibleWays[k]][j
-									+ myPossibleWays[k + 4]]) {
+							switch (myField[i + myPossibleWays[k]][j + myPossibleWays[k + 4]]) {
 							case 253:
 								isWayFound = true;
 							case 254:
-								myField[i + myPossibleWays[k]][j
-										+ myPossibleWays[k + 4]] = pathLength + 1;
+								myField[i + myPossibleWays[k]][j + myPossibleWays[k + 4]] = pathLength + 1;
 							}
 						}
 					}
