@@ -30,8 +30,8 @@ public class Main {
 				myField[i][j] = 254 + scanner.nextInt();
 			}
 		}
-		myField[scanner.nextInt()][scanner.nextInt()] = 253;
 		myField[scanner.nextInt()][scanner.nextInt()] = 0;
+		myField[scanner.nextInt()][scanner.nextInt()] = 253;
 		in.close();
 		scanner.close();
 	}
@@ -40,7 +40,7 @@ public class Main {
 	* Find short cut between two points
 	* 
 	* @return short cut between two points;
-	* @throws IOExpception, if there is no path between points
+	* @throws RunTimeExpception, if there is no path between points
 	*/
 	private static int getShortCut() throws IOException {
 		int minimalSide = Math.min(myHeight, myWidth);
