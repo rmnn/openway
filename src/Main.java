@@ -27,11 +27,11 @@ public class Main {
 		myWidth = scanner.nextInt();
 		for (int i = 1; i <= myHeight; i++) {
 			for (int j = 1; j <= myWidth; j++) {
-				myField[i][j] = 254 + scanner.nextInt();
+				myField[i][j] = -6 + scanner.nextInt();
 			}
 		}
 		myField[scanner.nextInt()][scanner.nextInt()] = 0;
-		myField[scanner.nextInt()][scanner.nextInt()] = 253;
+		myField[scanner.nextInt()][scanner.nextInt()] = -4;
 		in.close();
 		scanner.close();
 	}
@@ -54,9 +54,9 @@ public class Main {
 					for (int k = 0; k < 4; k++) {
 						if (myField[i][j] == pathLength) {
 							switch (myField[i + myPossibleWays[k]][j + myPossibleWays[k + 4]]) {
-							case 253:
+							case -4:
 								isWayFound = true;
-							case 254:
+							case -6:
 								myField[i + myPossibleWays[k]][j + myPossibleWays[k + 4]] = pathLength + 1;
 							}
 						}
